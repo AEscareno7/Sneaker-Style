@@ -1,3 +1,4 @@
+<h1>Productos</h1>
 <table>
     <thead>
       <tr>
@@ -15,6 +16,125 @@
         <td>{{ producto.descripcion }}</td>
         <td>{{ producto.precio | currency }}</td>
         <!-- Agrega más celdas según tus necesidades -->
+      </tr>
+    </tbody>
+  </table>
+
+<h2>Vista 1</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Calle</th>
+        <th>Usuario</th>
+        <th>Contraseña</th>
+        <!-- Agrega más columnas según tus necesidades -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vista1 of vista1">
+        <td>{{ vista1.nombre }}</td>
+        <td>{{ vista1.calle}}</td>
+        <td>{{ vista1.usuario }}</td>
+        <td>{{ vista1.contrasena }}</td>
+        <!-- Agrega más celdas según tus necesidades -->
+      </tr>
+    </tbody>
+  </table>
+  <h2>Vista 2</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Proveedor</th>
+        <th>Categoria</th>
+        <!-- Agrega más columnas según tus necesidades -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vista2 of vista2">
+        <td>{{ vista2.nombre_producto}}</td>
+        <td>{{ vista2.nombre_proveedor}}</td>
+        <td>{{ vista2.nombre_categoria }}</td>
+        <!-- Agrega más celdas según tus necesidades -->
+      </tr>
+    </tbody>
+  </table>
+  <h2>Vista 3</h2>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Calle</th>
+        <th>Numero</th>
+        <th>Localidad</th>
+        <th>Municipio</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vista3 of vista3">
+        <td>{{ vista3.nombre}}</td>
+        <td>{{ vista3.apellido1}}</td>
+        <td>{{ vista3.calle }}</td>
+        <td>{{ vista3.numero }}</td>
+        <td>{{ vista3.nombre_localidad }}</td>
+        <td>{{ vista3.nombre_municipio }}</td>
+
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Cliente que son empleados</h2>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let clienteempleados of clienteempleados">
+        <td>{{ clienteempleados.nombre_completo}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+  <h2>Total por categoria</h2>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Categoria</th>
+        <th>Total</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let totalcategoria of totalcategoria">
+        <td>{{ totalcategoria.categoria}}</td>
+        <td>{{ totalcategoria.total_precio}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Total del precio de los productos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let totalPrecioProductos of totalPrecioProductos">
+        <td>{{ totalPrecioProductos.total_precios}}</td>
       </tr>
     </tbody>
   </table>
