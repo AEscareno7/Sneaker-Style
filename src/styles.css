@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url(https://media.revistagq.com/photos/62a315555172e1bf9dcd9239/16:9/w_4224,h_2376,c_limit/lennart-uecker-49bZDF_EgJU-unsplash.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+}
