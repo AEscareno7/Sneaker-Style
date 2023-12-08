@@ -1,0 +1,70 @@
+<div class="card">
+<form [formGroup]="empleadosForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" formControlName="nombre" />
+      <div *ngIf="empleadosForm.get('nombre')?.hasError('pattern')" class="error-message">
+        Solo se permiten letras.
+      </div>
+    </div>
+  
+    <div>
+      <label for="nombre2">Nombre 2 (opcional):</label>
+      <input type="text" id="nombre2" formControlName="nombre2" />
+      <div *ngIf="empleadosForm.get('nombre2')?.hasError('pattern')" class="error-message">
+        Solo se permiten letras.
+      </div>
+    </div>
+  
+    <div>
+      <label for="apellido1">Apellido 1:</label>
+      <input type="text" id="apellido1" formControlName="apellido1" />
+      <div *ngIf="empleadosForm.get('apellido1')?.hasError('pattern')" class="error-message">
+        Solo se permiten letras.
+      </div>
+    </div>
+  
+    <div>
+      <label for="apellido2">Apellido 2:</label>
+      <input type="text" id="apellido2" formControlName="apellido2" />
+      <div *ngIf="empleadosForm.get('apellido2')?.hasError('pattern')" class="error-message">
+        Solo se permiten letras.
+      </div>
+    </div>
+  
+    <div>
+      <label for="idDireccion">ID Dirección:</label>
+      <input type="text" id="idDireccion" formControlName="idDireccion" />
+      <div *ngIf="empleadosForm.get('idDireccion')?.hasError('pattern')" class="error-message">
+        Solo se permiten números.
+      </div>
+    </div>
+  
+    <div>
+      <label for="curp">CURP:</label>
+      <input type="text" id="curp" formControlName="curp" />
+      <div *ngIf="empleadosForm.get('curp')?.hasError('pattern')" class="error-message">
+        Solo se permiten caracteres alfanuméricos sin caracteres especiales y debe tener una longitud de 18 caracteres.
+      </div>
+    </div>
+  
+    <div>
+      <label for="cargo">Cargo:</label>
+      <input type="text" id="cargo" formControlName="cargo" />
+      <div *ngIf="empleadosForm.get('cargo')?.hasError('pattern')" class="error-message">
+        Solo se permiten letras.
+      </div>
+    </div>
+  
+    <div>
+      <label for="idUsuario">ID Usuario:</label>
+      <input type="text" id="idUsuario" formControlName="idUsuario" />
+      <div *ngIf="empleadosForm.get('idUsuario')?.hasError('pattern')" class="error-message">
+        Solo se permiten números.
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="!empleadosForm.valid">Agregar</button>
+  </form>
+  
+</div>

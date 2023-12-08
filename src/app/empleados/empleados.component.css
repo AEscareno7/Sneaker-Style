@@ -1,7 +1,7 @@
 .card {
-    max-width: 400px;
+    max-width: 300px;
     margin: 20px auto;
-    margin-top: 5%;
+    margin-top: 4%;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -12,18 +12,18 @@
   }
   
   div {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   
   label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-weight: bold;
   }
   
   input {
     width: calc(100% - 16px);
-    padding: 8px;
+    padding: 3px;
     box-sizing: border-box;
   }
   
@@ -47,5 +47,10 @@
     margin-top: 5px;
   }
   
+  .character-count {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #999999;
+  }
   
   

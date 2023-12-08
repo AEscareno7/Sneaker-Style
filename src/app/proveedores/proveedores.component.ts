@@ -21,7 +21,6 @@ export class ProveedoresComponent {
 
   onSubmit() {
     if (this.proveedoresForm.valid) {
-      // Lógica para enviar los datos al servidor
       Swal.fire('Proveedor agregado con éxito', '', 'success');
     } else {
       Swal.fire('Error', 'Por favor, completa correctamente todos los campos.', 'error');
