@@ -1,0 +1,15 @@
+<div>
+    <h2>Agregar Proveedor</h2>
+    <input [(ngModel)]="nuevoProveedor" placeholder="Nombre del proveedor" />\
+    <button (click)="agregarProveedor()">Agregar</button>
+</div>
+
+<div>
+    <h2>Lista de Proveedores</h2>
+    <ul>
+        <li *ngFor="let proveedor of proveedores">
+            {{ proveedor }}
+            <button (click)="darDeBajaProveedor(proveedor)">Dar de Baja</button>
+        </li>
+    </ul>
+</div>

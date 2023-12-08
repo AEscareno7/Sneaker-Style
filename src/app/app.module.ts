@@ -7,18 +7,24 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { TenisComponent } from './tenis/tenis.component';
+import { ProveedoresComponent } from './proveedores/proveedores.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    TenisComponent,
+    ProveedoresComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    IonicModule.forRoot() // Añade esto
+    IonicModule.forRoot(),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
