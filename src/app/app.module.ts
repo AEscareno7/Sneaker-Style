@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ClienteComponent } from './cliente/cliente.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
 
+import { MostrarProductosComponent } from './mostrar-productos/mostrar-productos.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,15 +25,20 @@ import { EmpleadosComponent } from './empleados/empleados.component';
     RegistroComponent,
     TenisComponent,
     ProveedoresComponent,
+<<<<<<< HEAD
     ClienteComponent,
     EmpleadosComponent,
+=======
+    MostrarProductosComponent
+>>>>>>> b5f205bf5e619c0a97eee4d5876ca5af5ac51c63
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     IonicModule.forRoot(),
-    FormsModule,
     ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
