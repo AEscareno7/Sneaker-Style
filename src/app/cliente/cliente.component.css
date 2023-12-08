@@ -1,11 +1,7 @@
 .card {
-    max-width: 400px;
-<<<<<<< HEAD
-    margin: 130px auto;
-=======
+    max-width: 300px;
     margin: 20px auto;
     margin-top: 5%;
->>>>>>> 3067f7875d4bdced5cbe44200476939a52bee571
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -16,7 +12,7 @@
   }
   
   div {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   
   label {
@@ -50,4 +46,11 @@
     font-size: 14px;
     margin-top: 5px;
   }
-
+  
+  .character-count {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #999999;
+  }
+  
+  

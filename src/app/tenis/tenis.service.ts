@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class TenisService {
   private tenis: string[] = [];
 
-  agregarTenis(nombre: string): void {
-    this.tenis.push(nombre);
-  }
+  private apiUrl = 'http://localhost:3000/productos';
 
-  obtenerTenis(): string[] {
-    return this.tenis.slice(); // Devuelve una copia para evitar cambios directos desde fuera del servicio
+  constructor(private http: HttpClient) {}
+
+  agregarTenis(tenisData: any): Observable<any> {
+    return this.http.post(this.apiUrl, tenisData);
   }
 
   //da de baja a clientes

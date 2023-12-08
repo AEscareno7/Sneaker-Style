@@ -11,6 +11,8 @@ import { RegistroComponent } from './registro/registro.component';
 import { TenisComponent } from './tenis/tenis.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ClienteComponent } from './cliente/cliente.component';
+import { EmpleadosComponent } from './empleados/empleados.component';
 
 import { MostrarProductosComponent } from './mostrar-productos/mostrar-productos.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,7 +25,12 @@ import { HttpClientModule } from '@angular/common/http';
     RegistroComponent,
     TenisComponent,
     ProveedoresComponent,
+<<<<<<< HEAD
+    ClienteComponent,
+    EmpleadosComponent,
+=======
     MostrarProductosComponent
+>>>>>>> b5f205bf5e619c0a97eee4d5876ca5af5ac51c63
   ],
   imports: [
     BrowserModule,

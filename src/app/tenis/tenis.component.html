@@ -37,7 +37,7 @@
 
     <div>
       <label for="idProveedor">ID del Proveedor:</label>
-      <input type="text" id="idProveedor" formControlName="idProveedor" />
+      <input type="text" id="idProveedor" formControlName="id_proveedor" />
       <div *ngIf="tenisForm.get('idProveedor')?.hasError('pattern')" class="error-message" >
         Solo se permiten números.
       </div>
@@ -45,7 +45,7 @@
 
     <div>
       <label for="idCategoria">ID de la Categoría:</label>
-      <input type="text" id="idCategoria" formControlName="idCategoria" />
+      <input type="text" id="idCategoria" formControlName="id_categoria" />
       <div *ngIf="tenisForm.get('idCategoria')?.hasError('pattern')" class="error-message">
         Solo se permiten números.
       </div>
