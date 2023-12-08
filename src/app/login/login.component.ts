@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,24 +11,36 @@ export class LoginComponent {
     email: '',
     password: ''
   };
+  isSpacePresent = false;
 
-  login(form: any) {
-    // Eliminar espacios en blanco alrededor del texto ingresado
-    const emailTrimmed = this.user.email.trim();
-    const passwordTrimmed = this.user.password.trim();
+  constructor(private router: Router) {}
 
-    if (form.valid && emailTrimmed !== '' && passwordTrimmed !== '') {
-      // Simulación de lógica de inicio de sesión (reemplaza esto con tu lógica real)
-      if (emailTrimmed === 'usuario@example.com' && passwordTrimmed === 'contraseña') {
-        console.log('Login successful!');
-        // Aquí puedes redirigir a otra página o realizar acciones posteriores al inicio de sesión
-      } else {
-        console.log('Invalid credentials. Please try again.');
-        // Puedes mostrar un mensaje de error al usuario o realizar alguna acción en caso de credenciales inválidas
-      }
-    } else {
-      console.log('Form is invalid');
-      // Puedes mostrar un mensaje de error, deshabilitar el botón de inicio de sesión, etc.
+  emailChanged(): void {
+    this.isSpacePresent = this.user.email.trim().includes(' ');
+  }
+
+  passwordChanged(): void {
+    this.isSpacePresent = this.user.password.trim().includes(' ');
+  }
+
+  login(form: any): void {
+    const emailWithoutSpaces = this.user.email.trim();
+    const passwordWithoutSpaces = this.user.password.trim();
+
+    if (emailWithoutSpaces.includes(' ') || passwordWithoutSpaces.includes(' ')) {
+      alert('Por favor, evita espacios en blanco en el email o contraseña.');
+      return;
     }
+
+    // Simulación de lógica de inicio de sesión
+    if (emailWithoutSpaces === 'usuario@example.com' && passwordWithoutSpaces === 'contraseña') {
+      console.log('Inicio de sesión exitoso');
+      this.router.navigate(['/home']); // Redirige a la ruta '/home'
+    } else {
+      console.log('Credenciales inválidas. Por favor, intenta de nuevo.');
+      // Puedes mostrar un mensaje de error al usuario o realizar otra acción
+    }
+
+    // Aquí puedes realizar más acciones posteriores al inicio de sesión
   }
 }

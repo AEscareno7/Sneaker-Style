@@ -9,7 +9,8 @@
                 <h3 class="mb-5">Sign in</h3>
                 <div class="form-outline mb-4">
                   <input type="email" id="typeEmailX-2" class="form-control form-control-lg" [attr.required]="true"
-                    [(ngModel)]="user['email']" name="email" #email="ngModel" placeholder="Ingresa el Correo">
+                    [(ngModel)]="user['email']" name="email" #email="ngModel" (input)="emailChanged()"
+                    placeholder="Ingresa el Correo">
                   <label class="form-label" for="typeEmailX-2">Email</label>
                   <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
                     <p *ngIf="email.errors?.['required']">Email is required</p>
@@ -18,13 +19,14 @@
                 </div>
                 <div class="form-outline mb-4">
                   <input type="password" id="typePasswordX-2" class="form-control form-control-lg" [attr.required]="true"
-                    [(ngModel)]="user['password']" name="password" #password="ngModel" placeholder="Ingresa la contraseña">
+                    [(ngModel)]="user['password']" name="password" #password="ngModel" (input)="passwordChanged()"
+                    placeholder="Ingresa la contraseña">
                   <label class="form-label" for="typePasswordX-2">Password</label>
                   <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
                     <p *ngIf="password.errors?.['required']">Password is required</p>
                   </div>
                 </div>
-                <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="loginForm.invalid">Login</button>
+                <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="loginForm.invalid || isSpacePresent">Login</button>
               </div>
             </div>
           </form>
