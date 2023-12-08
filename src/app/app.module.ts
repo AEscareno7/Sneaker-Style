@@ -25,12 +25,11 @@ import { HttpClientModule } from '@angular/common/http';
     RegistroComponent,
     TenisComponent,
     ProveedoresComponent,
-<<<<<<< HEAD
     ClienteComponent,
     EmpleadosComponent,
-=======
+
     MostrarProductosComponent
->>>>>>> b5f205bf5e619c0a97eee4d5876ca5af5ac51c63
+
   ],
   imports: [
     BrowserModule,
