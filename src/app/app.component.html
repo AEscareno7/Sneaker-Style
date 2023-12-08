@@ -1,14 +1,9 @@
 <body>
-  <img src="https://media.revistagq.com/photos/62a315555172e1bf9dcd9239/16:9/w_4224,h_2376,c_limit/lennart-uecker-49bZDF_EgJU-unsplash.jpg" alt="" srcset="" 
-  autoplay loop muted plays-inline 
-  class="background-video">
+  <img
+    src="https://media.revistagq.com/photos/62a315555172e1bf9dcd9239/16:9/w_4224,h_2376,c_limit/lennart-uecker-49bZDF_EgJU-unsplash.jpg"
+    alt="" srcset="" autoplay loop muted plays-inline class="background-video">
   <header>
-    <a href="#"
-      ><img
-        src=""
-        alt="logo"
-        class="logo"
-    /></a>
+    <a href="#"><img src="" alt="logo" class="logo" /></a>
 
     <input type="checkbox" id="check" />
     <label for="check" class="icons">
@@ -17,17 +12,11 @@
     </label>
 
     <nav class="navbar">
-      <a href="#" class="nav-item" style="--i: 0">Home</a>
-      <a href="#" class="nav-item" style="--i: 1">Contacto</a>
-      <a href="#" class="nav-item" style="--i: 2">Iniciar Sesion</a>
+      <a routerLink="/home" class="nav-item" style="--i: 0">Home</a>
+      <a routerLink="/productos" class="nav-item" style="--i: 1">Productos y Provedores</a>
+      <a routerLink="/login" class="nav-item" style="--i: 2">login</a>
     </nav>
   </header>
 
-  <section class="content">
-    <h1>Sneaker Style</h1>
-    <a href="#" class="btn light"></a>
-  </section>
-  <section> 
-    <app-home></app-home>
-  </section>
+  <router-outlet></router-outlet>
 </body>

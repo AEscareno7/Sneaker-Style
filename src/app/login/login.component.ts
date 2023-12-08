@@ -6,13 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  email: string = '';
-  password: string = '';
-  emailHasSpaces: boolean = false;
-  passwordHasSpaces: boolean = false;
+  user = {
+    email: '',
+    password: ''
+  };
 
-  validateFields() {
-    this.emailHasSpaces = /\s/.test(this.email);
-    this.passwordHasSpaces = /\s/.test(this.password);
+  login(form: any) {
+    // Eliminar espacios en blanco alrededor del texto ingresado
+    const emailTrimmed = this.user.email.trim();
+    const passwordTrimmed = this.user.password.trim();
+
+    if (form.valid && emailTrimmed !== '' && passwordTrimmed !== '') {
+      // Simulación de lógica de inicio de sesión (reemplaza esto con tu lógica real)
+      if (emailTrimmed === 'usuario@example.com' && passwordTrimmed === 'contraseña') {
+        console.log('Login successful!');
+        // Aquí puedes redirigir a otra página o realizar acciones posteriores al inicio de sesión
+      } else {
+        console.log('Invalid credentials. Please try again.');
+        // Puedes mostrar un mensaje de error al usuario o realizar alguna acción en caso de credenciales inválidas
+      }
+    } else {
+      console.log('Form is invalid');
+      // Puedes mostrar un mensaje de error, deshabilitar el botón de inicio de sesión, etc.
+    }
   }
 }
