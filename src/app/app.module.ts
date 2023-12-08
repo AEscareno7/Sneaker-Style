@@ -22,14 +22,13 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegistroComponent,
     TenisComponent,
-    ProveedoresComponent,,
+    ProveedoresComponent,
     MostrarProductosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     IonicModule.forRoot(),
-    FormsModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule
