@@ -27,13 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProveedoresComponent,
     ClienteComponent,
     EmpleadosComponent,
-<<<<<<< HEAD
 
     MostrarProductosComponent
-
-=======
-    MostrarProductosComponent
->>>>>>> 63e6599ee371525cc2acd59ee75d772619e9fb0d
   ],
   imports: [
     BrowserModule,
