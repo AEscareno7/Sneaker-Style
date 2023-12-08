@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { TenisComponent } from './tenis/tenis.component';
+import { ProveedoresComponent } from './proveedores/proveedores.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { MostrarProductosComponent } from './mostrar-productos/mostrar-productos.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -17,12 +21,16 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     LoginComponent,
     RegistroComponent,
+    TenisComponent,
+    ProveedoresComponent,,
     MostrarProductosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     IonicModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule
   ],
