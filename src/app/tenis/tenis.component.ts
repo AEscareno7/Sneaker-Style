@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { TenisService } from './tenis.service'; 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tenis',
@@ -7,19 +8,24 @@ import { TenisService } from './tenis.service';
   styleUrls: ['./tenis.component.css'],
 })
 export class TenisComponent {
-  nuevoTenis: string = '';
-  tenis: string[] = [];
+  tenisForm: FormGroup;
 
-  constructor(private tenisService: TenisService) {
-    this.tenis = this.tenisService.obtenerTenis();
+  constructor(private fb: FormBuilder) {
+    this.tenisForm = this.fb.group({
+      id: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+      nombre: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s]+$/)]],
+      descripcion: ['', [Validators.maxLength(30)]],
+      precio: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+      idProveedor: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+      idCategoria: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+    });
   }
 
-  agregarTenis(): void {
-    this.tenisService.agregarTenis(this.nuevoTenis);
-    this.nuevoTenis = '';
-  }
-
-  darDeBajaTenis(tenis: string): void {
-    this.tenisService.darDeBajaTenis(tenis);
+  onSubmit() {
+    if (this.tenisForm.valid) {
+      Swal.fire('Producto agregado con éxito', '', 'success');
+    } else {
+      Swal.fire('Error', 'Por favor, completa correctamente todos los campos.', 'error');
+    }
   }
 }

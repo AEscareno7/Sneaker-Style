@@ -1,15 +1,56 @@
-<div>
-    <h2>Agregar Tenis</h2>
-    <input [(ngModel)]="nuevoTenis" placeholder="Nombre del tenis" />
-    <button (click)="agregarTenis()">Agregar</button>
-  </div>
-  
-  <div>
-    <h2>Lista de Tenis</h2>
-    <ul>
-      <li *ngFor="let tenis of tenis">
-        {{ tenis }}
-        <button (click)="darDeBajaTenis(tenis)">Dar de Baja</button>
-      </li>
-    </ul>
-  </div>
+<div class="card">
+  <form [formGroup]="tenisForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="id">ID del Tenis:</label>
+      <input type="text" id="id" formControlName="id" />
+      <div *ngIf="tenisForm.get('id')?.hasError('pattern')" class="error-message">
+        Solo se permiten números.
+      </div>
+    </div>
+
+    <div>
+      <label for="nombre">Nombre del Tenis:</label>
+      <input type="text" id="nombre" formControlName="nombre" />
+      <div *ngIf="tenisForm.get('nombre')?.hasError('pattern')" class="error-message" >
+        Solo se permiten caracteres alfanuméricos sin caracteres especiales.
+      </div>
+    </div>
+
+    <div>
+      <label for="descripcion">Descripción del Producto (máximo 30 caracteres):</label>
+      <input type="text" id="descripcion" formControlName="descripcion" maxlength="30" />
+      <div *ngIf="tenisForm.get('descripcion')?.hasError('maxlength')" class="error-message" >
+        Se ha alcanzado el límite de 30 caracteres.
+      </div>
+      <div>
+        Caracteres restantes: {{ 30 - tenisForm.get('descripcion')?.value.length }}
+      </div>
+    </div>
+
+    <div>
+      <label for="precio">Precio:</label>
+      <input type="text" id="precio" formControlName="precio" />
+      <div *ngIf="tenisForm.get('precio')?.hasError('pattern')" class="error-message">
+        Solo se permiten números.
+      </div>
+    </div>
+
+    <div>
+      <label for="idProveedor">ID del Proveedor:</label>
+      <input type="text" id="idProveedor" formControlName="idProveedor" />
+      <div *ngIf="tenisForm.get('idProveedor')?.hasError('pattern')" class="error-message" >
+        Solo se permiten números.
+      </div>
+    </div>
+
+    <div>
+      <label for="idCategoria">ID de la Categoría:</label>
+      <input type="text" id="idCategoria" formControlName="idCategoria" />
+      <div *ngIf="tenisForm.get('idCategoria')?.hasError('pattern')" class="error-message">
+        Solo se permiten números.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!tenisForm.valid">Agregar</button>
+  </form>
+</div>
