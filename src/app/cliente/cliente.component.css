@@ -1,5 +1,5 @@
 .card {
-    max-width: 400px;
+    max-width: 300px;
     margin: 20px auto;
     margin-top: 5%;
     padding: 20px;
@@ -12,7 +12,7 @@
   }
   
   div {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   
   label {
@@ -47,5 +47,10 @@
     margin-top: 5px;
   }
   
+  .character-count {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #999999;
+  }
   
   

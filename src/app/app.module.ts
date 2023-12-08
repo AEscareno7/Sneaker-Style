@@ -11,6 +11,8 @@ import { RegistroComponent } from './registro/registro.component';
 import { TenisComponent } from './tenis/tenis.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ClienteComponent } from './cliente/cliente.component';
+import { EmpleadosComponent } from './empleados/empleados.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegistroComponent,
     TenisComponent,
     ProveedoresComponent,
+    ClienteComponent,
+    EmpleadosComponent,
   ],
   imports: [
     BrowserModule,

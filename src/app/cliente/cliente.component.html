@@ -1,0 +1,45 @@
+<div class="card">
+    <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" formControlName="nombre" />
+            <div *ngIf="clienteForm.get('nombre')?.hasError('pattern')" class="error-message">
+                Solo se permiten letras.
+            </div>
+        </div>
+
+        <div>
+            <label for="nombre2">Nombre 2 (opcional):</label>
+            <input type="text" id="nombre2" formControlName="nombre2" />
+            <div *ngIf="clienteForm.get('nombre2')?.hasError('pattern')" class="error-message">
+                Solo se permiten letras.
+            </div>
+        </div>
+
+        <div>
+            <label for="apellido1">Apellido 1:</label>
+            <input type="text" id="apellido1" formControlName="apellido1" />
+            <div *ngIf="clienteForm.get('apellido1')?.hasError('pattern')" class="error-message">
+                Solo se permiten letras.
+            </div>
+        </div>
+
+        <div>
+            <label for="apellido2">Apellido 2:</label>
+            <input type="text" id="apellido2" formControlName="apellido2" />
+            <div *ngIf="clienteForm.get('apellido2')?.hasError('pattern')" class="error-message">
+                Solo se permiten letras.
+            </div>
+        </div>
+
+        <div>
+            <label for="idDireccion">ID Dirección:</label>
+            <input type="text" id="idDireccion" formControlName="idDireccion" />
+            <div *ngIf="clienteForm.get('idDireccion')?.hasError('pattern')" class="error-message">
+                Solo se permiten números.
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="!clienteForm.valid">Agregar</button>
+    </form>
+</div>
