@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicModule } from '@ionic/angular'; // Asegúrate de que esta importación esté presente
+import { FormsModule } from '@angular/forms'; // Importa FormsModule desde Angular
 
+import { IonicModule } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -18,7 +19,8 @@ import { RegistroComponent } from './registro/registro.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    IonicModule.forRoot() // Añade esto
+    IonicModule.forRoot(),
+    FormsModule // Añade FormsModule aquí
   ],
   providers: [],
   bootstrap: [AppComponent]

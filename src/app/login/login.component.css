@@ -1,0 +1,9 @@
+.is-invalid {
+    border-color: red !important;
+  }
+  
+  .btn-disabled {
+    background-color: gray !important;
+    pointer-events: none;
+  }
+  
