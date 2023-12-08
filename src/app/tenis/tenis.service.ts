@@ -14,6 +14,7 @@ export class TenisService {
     return this.tenis.slice(); // Devuelve una copia para evitar cambios directos desde fuera del servicio
   }
 
+  //da de baja a clientes
   darDeBajaTenis(nombre: string): void {
     const index = this.tenis.indexOf(nombre);
     if (index !== -1) {

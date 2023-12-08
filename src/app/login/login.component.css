@@ -1,0 +1,29 @@
+.animated-form {
+  position: relative;
+}
+
+.animated-input {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-input::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, red, green, blue);
+  animation: rotateLights 8s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotateLights {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
