@@ -23,12 +23,22 @@ export class LoginComponent {
     this.isSpacePresent = this.user.password.trim().includes(' ');
   }
 
+  isValidEmail(): boolean {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(this.user.email.trim());
+  }
+
   login(form: any): void {
     const emailWithoutSpaces = this.user.email.trim();
     const passwordWithoutSpaces = this.user.password.trim();
 
     if (emailWithoutSpaces.includes(' ') || passwordWithoutSpaces.includes(' ')) {
       alert('Por favor, evita espacios en blanco en el email o contraseña.');
+      return;
+    }
+
+    if (!this.isValidEmail()) {
+      alert('Por favor, introduce un correo electrónico válido.');
       return;
     }
 
