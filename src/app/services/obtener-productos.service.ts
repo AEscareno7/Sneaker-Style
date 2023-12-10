@@ -34,8 +34,16 @@ export class ObtenerProductosService {
   totalcategoria(): Observable<any[]> {
     return this.http.get<any[]>(`http://localhost:3000/total_por_categoria`);
   }
-
   
+  deleteProduct(productId: number): Observable<any> {
+    const deleteUrl = `${this.apiUrl}/${productId}`;
+    return this.http.delete(deleteUrl);
+  }
+
+  updateProduct(product: any): Observable<any> {
+    const updateUrl = `${this.apiUrl}/${product.id}`;
+    return this.http.put(updateUrl, product);
+  }
 
   
   totalPrecioProducto(): Observable<any[]> {
