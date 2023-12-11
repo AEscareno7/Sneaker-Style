@@ -5,6 +5,8 @@ import { ObtenerProductosService } from '../services/obtener-productos.service';
 import { Subscription } from 'rxjs';
 import { NotificationService } from '../services/notification-service.service';
 import { TenisComponent } from '../tenis/tenis.component';
+import { MatDialog } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -14,7 +16,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   products: any[] = [];
   private subscription: Subscription  = new Subscription();;
 
-  constructor(private obtenerProductosService: ObtenerProductosService, private notificationService: NotificationService) {}
+  constructor(private obtenerProductosService: ObtenerProductosService, private notificationService: NotificationService,private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadProducts();
