@@ -1,1 +1,17 @@
-<p>registro works!</p>
+<body>
+	<div class="container add" id="container">
+		<div class="brand">
+			<h3>Altas</h3>
+			<a href="#" id="toggle"><i class="bi bi-ui-checks-grid"></i></a>
+		</div>
+		<div class="navbar">
+			<ul>
+				<li><a routerLink="/empleados"><i class="bi bi-person-add"></i><span>Empleado</span></a></li>
+				<li><a routerLink="/proveedores"><i class="bi bi-person-gear"></i><span>Proveedores</span></a></li>
+				<li><a routerLink="/cliente"><i class="bi bi-person-plus"></i><span>Cliente</span></a></li>
+				<li><a routerLink="/productos"><i class="bi bi-bag-plus"></i><span>Productos</span></a></li>
+			</ul>
+		</div>
+		<router-outlet></router-outlet>
+	</div>
+</body>
