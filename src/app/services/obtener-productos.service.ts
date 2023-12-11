@@ -47,10 +47,25 @@ export class ObtenerProductosService {
     return this.http.put(updateUrl, product);
   }
 
+  updateEmpleados(empleados:any): Observable<any> {
+    const updateUrl = `${this.apiUrl}/${empleados.id}`;
+    return this.http.put(updateUrl, empleados);
+  }
+
   
   totalPrecioProducto(): Observable<any[]> {
     return this.http.get<any[]>(`http://localhost:3000/total_precio_productos`);
   }
   
+  agregarEmpleado(empleado: any): Observable<any> {
+    return this.http.post(`http://localhost:3000/empleados`, empleado);
+  }
+
+  agregarProveedor(proveedor: any): Observable<any> {
+    return this.http.post(`http://localhost:3000/proveedores`, proveedor);
+  }
+  agregarCliente(cliente: any): Observable<any> {
+    return this.http.post(`http://localhost:3000/clientes`, cliente);
+  }
 
 }

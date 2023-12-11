@@ -1,26 +1,10 @@
 <div class="card">
     <form [formGroup]="proveedoresForm" (ngSubmit)="onSubmit()">
         <div>
-            <label for="id">ID del Proveedor:</label>
-            <input type="text" id="id" formControlName="id" />
-            <div *ngIf="proveedoresForm.get('id')?.hasError('pattern')" class="error-message">
-                Solo se permiten números.
-            </div>
-        </div>
-
-        <div>
             <label for="nombre">Nombre del Proveedor:</label>
             <input type="text" id="nombre" formControlName="nombre" />
             <div *ngIf="proveedoresForm.get('nombre')?.hasError('pattern')" class="error-message">
                 Solo se permiten letras.
-            </div>
-        </div>
-
-        <div>
-            <label for="idMedioComunicacion">ID Medio de Comunicación:</label>
-            <input type="text" id="idMedioComunicacion" formControlName="idMedioComunicacion" />
-            <div *ngIf="proveedoresForm.get('idMedioComunicacion')?.hasError('pattern')" class="error-message">
-                Solo se permiten números.
             </div>
         </div>
 

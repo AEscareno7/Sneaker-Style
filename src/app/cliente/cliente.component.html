@@ -1,9 +1,9 @@
 <div class="card">
     <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
         <div>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" formControlName="nombre" />
-            <div *ngIf="clienteForm.get('nombre')?.hasError('pattern')" class="error-message">
+            <label for="nombre1">Nombre:</label>
+            <input type="text" id="nombre1" formControlName="nombre1" />
+            <div *ngIf="clienteForm.get('nombre1')?.hasError('pattern')" class="error-message">
                 Solo se permiten letras.
             </div>
         </div>
@@ -34,8 +34,8 @@
 
         <div>
             <label for="idDireccion">ID Dirección:</label>
-            <input type="text" id="idDireccion" formControlName="idDireccion" />
-            <div *ngIf="clienteForm.get('idDireccion')?.hasError('pattern')" class="error-message">
+            <input type="text" id="id_direccion" formControlName="id_direccion" />
+            <div *ngIf="clienteForm.get('id_direccion')?.hasError('pattern')" class="error-message">
                 Solo se permiten números.
             </div>
         </div>

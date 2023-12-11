@@ -37,7 +37,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
       (response) => {
         console.log('Producto eliminado correctamente', response);
       this.loadProducts();
-      window.location.reload();
     },(error)=>{
       this.loadProducts();
       console.error('Error al eliminar producto', error);
