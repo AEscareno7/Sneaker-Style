@@ -67,5 +67,31 @@ export class ObtenerProductosService {
   agregarCliente(cliente: any): Observable<any> {
     return this.http.post(`http://localhost:3000/clientes`, cliente);
   }
+  consultaRollup(): Observable<any[]> {
+    return this.http.get<any[]>(`http://localhost:3000/total_por_categoria_tabla_rollup`);
+  }
+
+  
+
+  precioCategoriaProcedure(categoria:any): Observable<any> {
+    const updateUrl = `${this.apiUrl}/total-precios-por-categoria/${categoria}`;
+    return this.http.get(updateUrl,categoria);
+  }
+
+  productoCategoriaProcedure(categoria:any): Observable<any> {
+    const updateUrl = `${this.apiUrl}/productos-por-categoria/${categoria}`;
+    return this.http.get(updateUrl,categoria);
+  }
+  
+
+  tipodescuento(id:any): Observable<any> {
+    const updateUrl = `${this.apiUrl}/tipo-descuento-para-producto/${id}`;
+    return this.http.get(updateUrl,id);
+  }
+
+
+
+
+  
 
 }

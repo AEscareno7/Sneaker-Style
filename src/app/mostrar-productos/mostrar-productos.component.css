@@ -6,12 +6,18 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    color: #f2f2f2;
   }
   
   th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    
+  }
+
+  th{
+    color: black;
   }
   
   th {
@@ -21,3 +27,69 @@ table {
   h2, h1{
     color: #ffff;
   }
+
+
+  .card1{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    width: 240px;
+    height: 150px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background: #fff;
+    border-radius: 20px;
+  }
+  
+  .card > * {
+    margin: 0;
+  }
+  
+  .card__title {
+    font-size: 23px;
+    font-weight: 900;
+    color: #333;
+  }
+  
+  .card__content {
+    font-size: 13px;
+    line-height: 18px;
+    color: #333;
+  }
+  
+  .card__form {
+    display: flex;
+    flex-direction: column;
+ 
+  }
+  
+  .card__form input {
+    margin-top: 10px;
+    outline: 0;
+    background: rgb(255, 255, 255);
+    box-shadow: transparent 0px 0px 0px 1px inset;
+    padding: 0.6em;
+    border-radius: 14px;
+    border: 1px solid #333;
+    color: black;
+  }
+  
+  .card__form button {
+    border: 0;
+    background: #111;
+    color: #fff;
+    padding: 0.68em;
+    border-radius: 14px;
+    font-weight: bold;
+  }
+  
+  .sign-up:hover {
+    opacity: 0.8;
+  } 
+  
