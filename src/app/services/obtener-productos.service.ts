@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { NotificationService } from './notification-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class ObtenerProductosService {
 
   private apiUrl = 'http://localhost:3000'; 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private notificationService: NotificationService) {}
 
   getProductos(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/productos`);
@@ -36,7 +37,8 @@ export class ObtenerProductosService {
   }
   
   deleteProduct(productId: number): Observable<any> {
-    const deleteUrl = `${this.apiUrl}/${productId}`;
+    this.notificationService.notifyProductsUpdated();
+    const deleteUrl = `http://localhost:3000/productos/${productId}`;
     return this.http.delete(deleteUrl);
   }
 
