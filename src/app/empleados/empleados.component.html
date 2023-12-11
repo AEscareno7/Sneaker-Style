@@ -3,7 +3,7 @@
     <p class="title">Alta Empleado</p>
     <div class="flex">
       <label>
-        <input type="text" id="nombre" formControlName="nombre" class="input" />
+        <input type="text" id="nombre1" formControlName="nombre1" class="input" />
         <span>Nombre </span>
       </label>
       <div *ngIf="empleadosForm.get('nombre')?.hasError('pattern')" class="error-message">
@@ -38,8 +38,8 @@
       </div>
     </div>
 
-    <label for="idDireccion">
-      <input type="text" id="idDireccion" formControlName="idDireccion" class="input" />
+    <label for="id_direccion">
+      <input type="text" id="id_direccion" formControlName="id_direccion" class="input" />
       <span>ID Dirección:</span>
     </label>
     <div *ngIf="empleadosForm.get('idDireccion')?.hasError('pattern')" class="error-message">
@@ -62,14 +62,14 @@
         Solo se permiten letras.
       </div>
 
-      <label for="idUsuario">
-        <input type="text" id="idUsuario" formControlName="idUsuario" class="input" />
+      <label for="id_usuario">
+        <input type="text" id="id_usuario" formControlName="id_usuario" class="input" />
         <span>ID Usuario:</span>
       </label>
       <div *ngIf="empleadosForm.get('idUsuario')?.hasError('pattern')" class="error-message">
         Solo se permiten números.
       </div>
     </div>
-    <button type="submit" [disabled]="!empleadosForm.valid" class="submit">Agregar</button>
+    <button type="submit"  class="submit">Agregar</button>
   </form>
 </body>
