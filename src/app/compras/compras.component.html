@@ -1,0 +1,41 @@
+<body>
+    <form class="form" [formGroup]="comprasForm" (ngSubmit)="onSubmit()">
+        <p class="title">Alta Compras</p>
+        <div class="flex">
+            <label>
+                <input type="text" id="id" formControlName="id" class="input" />
+                <span>ID Compra: </span>
+            </label>
+            <div *ngIf="comprasForm.get('id')?.hasError('pattern')" class="error-message">
+                Solo se permiten numeros.
+            </div>
+
+
+            <label for="total">
+                <input type="text" id="total" formControlName="total" class="input" />
+                <span>Costo Total:</span>
+            </label>
+            <div *ngIf="comprasForm.get('total')?.hasError('pattern')" class="error-message">
+                Solo se permiten numeros.
+            </div>
+        </div>
+
+        <label for="fecha">
+            <input type="date" id="fecha" formControlName="fecha" class="input" />
+            <span>Fecha: </span>
+        </label>
+        <div *ngIf="comprasForm.get('fecha')?.hasError('pattern')" class="error-message">
+            Por favor, ingresa una fecha válida.
+        </div>
+
+        <label for="idEmpleado">
+            <input type="text" id="idEmpleado" formControlName="idEmpleado" class="input" />
+            <span>ID Empleado: </span>
+        </label>
+        <div *ngIf="comprasForm.get('idEmpleado')?.hasError('pattern')" class="error-message">
+            Solo se permiten números.
+        </div>
+
+        <button type="submit" [disabled]="!comprasForm.valid" class="submit">Agregar</button>
+    </form>
+</body>

@@ -10,6 +10,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { RegistroComponent } from './registro/registro.component';
+import { ComprasComponent } from './compras/compras.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'empleados' , component: EmpleadosComponent},
   {path: 'Registros' , component: RegistroComponent},
   {path: 'ListaProductos', component: ProductListComponent},
+  {path: 'Compras' , component: ComprasComponent},
   { path: 'login', component: LoginComponent },
   { path: 'mostrarproductos', component: MostrarProductosComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },

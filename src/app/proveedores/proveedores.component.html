@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <body>
     <form class="form" [formGroup]="proveedoresForm" (ngSubmit)="onSubmit()">
       <p class="title">Alta Proveedor</p>
@@ -38,26 +37,5 @@
       </div>
       
       <button type="submit" [disabled]="!proveedoresForm.valid" class="submit">Agregar</button>
-=======
-<div class="card">
-    <form [formGroup]="proveedoresForm" (ngSubmit)="onSubmit()">
-        <div>
-            <label for="nombre">Nombre del Proveedor:</label>
-            <input type="text" id="nombre" formControlName="nombre" />
-            <div *ngIf="proveedoresForm.get('nombre')?.hasError('pattern')" class="error-message">
-                Solo se permiten letras.
-            </div>
-        </div>
-
-        <div>
-            <label for="empresa">Empresa:</label>
-            <input type="text" id="empresa" formControlName="empresa" />
-            <div *ngIf="proveedoresForm.get('empresa')?.hasError('pattern')" class="error-message">
-                Solo se permiten caracteres alfanuméricos sin caracteres especiales.
-            </div>
-        </div>
-
-        <button type="submit" [disabled]="!proveedoresForm.valid">Agregar</button>
->>>>>>> 00a4b94be08bde681bdf8e09837ce914da49baa8
-    </form>
+      </form>
   </body>
