@@ -1,37 +1,41 @@
-<div class="card">
-    <form [formGroup]="proveedoresForm" (ngSubmit)="onSubmit()">
-        <div>
-            <label for="id">ID del Proveedor:</label>
-            <input type="text" id="id" formControlName="id" />
-            <div *ngIf="proveedoresForm.get('id')?.hasError('pattern')" class="error-message">
-                Solo se permiten números.
-            </div>
+<body>
+    <form class="form" [formGroup]="proveedoresForm" (ngSubmit)="onSubmit()">
+      <p class="title">Alta Proveedor</p>
+      <div class="flex">
+        <label>
+          <input type="text" id="id" formControlName="id" class="input" />
+          <span>ID Proveedor: </span>
+        </label>
+        <div *ngIf="proveedoresForm.get('id')?.hasError('pattern')" class="error-message">
+          Solo se permiten numeros.
         </div>
-
-        <div>
-            <label for="nombre">Nombre del Proveedor:</label>
-            <input type="text" id="nombre" formControlName="nombre" />
-            <div *ngIf="proveedoresForm.get('nombre')?.hasError('pattern')" class="error-message">
-                Solo se permiten letras.
-            </div>
+  
+        <label for="idMedioComunicacion">
+          <input type="text" id="idMedioComunicacion" formControlName="idMedioComunicacion" class="input" />
+          <span>ID Medio Comunicacion:</span>
+        </label>
+        <div *ngIf="proveedoresForm.get('idMedioComunicacion')?.hasError('pattern')" class="error-message">
+          Solo se permiten numeros.
         </div>
-
-        <div>
-            <label for="idMedioComunicacion">ID Medio de Comunicación:</label>
-            <input type="text" id="idMedioComunicacion" formControlName="idMedioComunicacion" />
-            <div *ngIf="proveedoresForm.get('idMedioComunicacion')?.hasError('pattern')" class="error-message">
-                Solo se permiten números.
-            </div>
-        </div>
-
-        <div>
-            <label for="empresa">Empresa:</label>
-            <input type="text" id="empresa" formControlName="empresa" />
-            <div *ngIf="proveedoresForm.get('empresa')?.hasError('pattern')" class="error-message">
-                Solo se permiten caracteres alfanuméricos sin caracteres especiales.
-            </div>
-        </div>
-
-        <button type="submit" [disabled]="!proveedoresForm.valid">Agregar</button>
+  
+    </div>
+    
+    <label for="nombre">
+      <input type="text" id="nombre" formControlName="nombre" class="input" />
+      <span>Nombre Proveedor:</span>
+    </label>
+    <div *ngIf="proveedoresForm.get('nombre')?.hasError('pattern')" class="error-message">
+      Solo se permiten letras.
+    </div>
+  
+      <label for="empresa">
+        <input type="text" id="empresa" formControlName="empresa" class="input" />
+        <span>Empresa:</span>
+      </label>
+      <div *ngIf="proveedoresForm.get('empresa')?.hasError('pattern')" class="error-message">
+        Solo se permiten caracteres alfanuméricos sin caracteres especiales.
+      </div>
+      
+      <button type="submit" [disabled]="!proveedoresForm.valid" class="submit">Agregar</button>
     </form>
-</div>
+  </body>
