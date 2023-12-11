@@ -16,11 +16,9 @@ import { EmpleadosComponent } from './empleados/empleados.component';
 
 import { MostrarProductosComponent } from './mostrar-productos/mostrar-productos.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductListComponent } from './product-list/product-list.component';
 import { ComprasComponent } from './compras/compras.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { MatDialogModule } from '@angular/material/dialog';
+import { ProductListComponent } from './product-list/product-list.component';
 
 
 @NgModule({
@@ -33,10 +31,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     ProveedoresComponent,
     ClienteComponent,
     EmpleadosComponent,
-
     MostrarProductosComponent,
-      ProductListComponent,
-      ComprasComponent
+    ProductListComponent,
+    ComprasComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +42,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    MatDialogModule,
     BrowserAnimationsModule
   ],
   providers: [],

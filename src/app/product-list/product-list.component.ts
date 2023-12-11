@@ -1,22 +1,22 @@
-// product-list.component.ts
-
 import { Component, OnInit , OnDestroy} from '@angular/core';
+
 import { ObtenerProductosService } from '../services/obtener-productos.service';
 import { Subscription } from 'rxjs';
 import { NotificationService } from '../services/notification-service.service';
-import { TenisComponent } from '../tenis/tenis.component';
-import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css'],
+  styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit, OnDestroy {
   products: any[] = [];
   private subscription: Subscription  = new Subscription();;
+  isEditing: boolean = false;
+  editProductId: number | null = null;
 
-  constructor(private obtenerProductosService: ObtenerProductosService, private notificationService: NotificationService,private dialog: MatDialog) {}
+  constructor(private obtenerProductosService: ObtenerProductosService, private notificationService: NotificationService) {}
 
   ngOnInit(): void {
     this.loadProducts();
@@ -51,5 +51,23 @@ export class ProductListComponent implements OnInit, OnDestroy {
     this.obtenerProductosService.updateProduct(product).subscribe(() => {
       this.loadProducts();
     });
+  }
+
+  editProduct(product: any) {
+    this.isEditing = true;
+    this.editProductId = product.id;
+  }
+
+  saveProductEdits(product: any) {
+    this.isEditing = false;
+    this.editProductId = null;
+
+    // Lógica para guardar los cambios en la base de datos
+    this.updateProduct(product);
+  }
+
+  cancelEdit() {
+    this.isEditing = false;
+    this.editProductId = null;
   }
 }

@@ -1,4 +1,5 @@
-<table>
+<body>
+  <table>
     <thead>
       <tr>
         <th>ID</th>
@@ -12,18 +13,45 @@
     </thead>
     <tbody>
       <tr *ngFor="let product of products">
-        <td>{{ product.id }}</td>
-        <td>{{ product.descripcion }}</td>
-        <td>{{ product.nombre }}</td>
-        <td>{{ product.precio }}</td>
-        <td>{{ product.id_proveedor }}</td>
-        <td>{{ product.id_categoria }}</td>
+        <td *ngIf="!isEditing || product.id !== editProductId">{{ product.id }}</td>
+        <td *ngIf="isEditing && product.id === editProductId">
+          <input [(ngModel)]="product.id" placeholder="ID" disabled>
+        </td>
+  
+        <td *ngIf="!isEditing || product.id !== editProductId">{{ product.descripcion }}</td>
+        <td *ngIf="isEditing && product.id === editProductId">
+          <input [(ngModel)]="product.descripcion" placeholder="Descripción">
+        </td>
+  
+        <td *ngIf="!isEditing || product.id !== editProductId">{{ product.nombre }}</td>
+        <td *ngIf="isEditing && product.id === editProductId">
+          <input [(ngModel)]="product.nombre" placeholder="Nombre">
+        </td>
+  
+        <td *ngIf="!isEditing || product.id !== editProductId">{{ product.precio }}</td>
+        <td *ngIf="isEditing && product.id === editProductId">
+          <input [(ngModel)]="product.precio" placeholder="Precio">
+        </td>
+  
+        <td *ngIf="!isEditing || product.id !== editProductId">{{ product.id_proveedor }}</td>
+        <td *ngIf="isEditing && product.id === editProductId">
+          <input [(ngModel)]="product.id_proveedor" placeholder="ID Proveedor">
+        </td>
+  
+        <td *ngIf="!isEditing || product.id !== editProductId">{{ product.id_categoria }}</td>
+        <td *ngIf="isEditing && product.id === editProductId">
+          <input [(ngModel)]="product.id_categoria" placeholder="ID Categoría">
+        </td>
+  
         <td>
+          <button *ngIf="!isEditing" class="update" (click)="editProduct(product)">Editar</button>
+          <button *ngIf="isEditing" class="update" (click)="saveProductEdits(product)">Guardar</button>
+          <button *ngIf="isEditing" class="cancel" (click)="cancelEdit()">Cancelar</button>
           <button class="delete" (click)="deleteProduct(product.id)">Eliminar</button>
-          <button class="update" (click)="updateProduct(product)">Modificar</button> 
         </td>
       </tr>
     </tbody>
-  </table>
+  </table>  
+</body>
 
-  
+

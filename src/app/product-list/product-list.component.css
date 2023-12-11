@@ -1,9 +1,13 @@
 table {
-    width: 100%;
+    width: 75%;
     border-collapse: collapse;
     margin-top: 5%;
     background-color: rgba(235, 225, 225, 0.7);
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
   }
+
   
   th, td {
     border: 1px solid #dddddd;
@@ -56,3 +60,25 @@ table {
     color: black;
     border: 1px solid #e00606;
   }
+
+
+  .cancel {
+    cursor: pointer;
+    background-color: #004ae9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px;
+    transition-duration: 0.4s;
+  }
+
+  .cancel:hover {
+    background-color: rgb(97, 133, 230);
+    color: black;
+    border: 1px solid #0690e0;
+  }
+
