@@ -139,4 +139,111 @@
       </tr>
     </tbody>
   </table>
+
+  <h2>Consulta con rollup</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Categoria</th>
+        <th>Total</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rollup of rollup">
+        <td>{{ rollup.nombre_categoria}}</td>
+        <td>{{ rollup.total_precio}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Procedures y funciones</h2>
+<div class="card1">
+<div class="card">
+    <p class="card__content">Totales de las categorias
+    </p>
+    <div class="card__form">
+        <input  #categoriaInput placeholder="Categoria" type="text">
+        <button class="sign-up" (click)=" proCatPrecio(categoriaInput.value)">Buscar</button>
+    </div>
 </div>
+</div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr >
+      <td>{{ categoriaprec}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="card1">
+  <div class="card">
+      <p class="card__content"> Productos de las categorias
+      </p>
+      <div class="card__form">
+          <input  #categoriaInput2 placeholder="Categoria" type="text">
+          <button class="sign-up" (click)=" proCatProd(categoriaInput2.value)">Buscar</button>
+      </div>
+  </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Descripcion</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let categoriaproducto of categoriaproducto">
+        <td>{{ categoriaproducto.descripcion}}</td>
+        <td>{{ categoriaproducto.nombre}}</td>
+        <td>{{ categoriaproducto.precio}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div class="card1">
+    <div class="card">
+        <p class="card__content"> Tipo de descuento por producto
+        </p>
+        <div class="card__form">
+            <input  #idprod placeholder="Categoria" type="text">
+            <button class="sign-up" (click)=" descuentoProducto(idprod.value)">Buscar</button>
+        </div>
+    </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Descripcion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let descuentoProd of descuentoProd">
+          <td>{{ descuentoProd.TipoDescuento}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  
+  
+</div>
+
+
+
+

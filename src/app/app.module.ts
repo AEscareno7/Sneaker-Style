@@ -18,7 +18,8 @@ import { MostrarProductosComponent } from './mostrar-productos/mostrar-productos
 import { HttpClientModule } from '@angular/common/http';
 import { ComprasComponent } from './compras/compras.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductListComponent } from './product-list/product-list.component';
+
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -32,8 +33,8 @@ import { ProductListComponent } from './product-list/product-list.component';
     ClienteComponent,
     EmpleadosComponent,
     MostrarProductosComponent,
-    ProductListComponent,
-    ComprasComponent
+      ProductListComponent,
+      ComprasComponent
   ],
   imports: [
     BrowserModule,
