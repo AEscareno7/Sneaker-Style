@@ -4,6 +4,7 @@ import { Component, OnInit , OnDestroy} from '@angular/core';
 import { ObtenerProductosService } from '../services/obtener-productos.service';
 import { Subscription } from 'rxjs';
 import { NotificationService } from '../services/notification-service.service';
+import { TenisComponent } from '../tenis/tenis.component';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
