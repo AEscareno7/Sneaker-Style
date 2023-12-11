@@ -89,7 +89,12 @@ export class ObtenerProductosService {
     return this.http.get(updateUrl,id);
   }
 
-
+  agregarCompra(compra: any): Observable<any> {
+    return this.http.post(`http://localhost:3000/compras`, compra);
+  }
+  agregarVenta(venta: any): Observable<any> {
+    return this.http.post(`http://localhost:3000/ventas`, venta);
+  }
 
 
   

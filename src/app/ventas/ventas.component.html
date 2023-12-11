@@ -1,13 +1,13 @@
 <body>
-    <form class="form" [formGroup]="comprasForm" (ngSubmit)="onSubmit()">
-        <p class="title">Alta Compras</p>
+    <form class="form" [formGroup]="ventasForm" (ngSubmit)="onSubmit()">
+        <p class="title">Alta ventas</p>
         <div class="flex">
 
             <label for="total">
                 <input type="text" id="total" formControlName="total" class="input" />
                 <span>Costo Total:</span>
             </label>
-            <div *ngIf="comprasForm.get('total')?.hasError('pattern')" class="error-message">
+            <div *ngIf="ventasForm.get('total')?.hasError('pattern')" class="error-message">
                 Solo se permiten numeros.
             </div>
         </div>
@@ -16,7 +16,7 @@
             <input type="date" id="fecha" formControlName="fecha" class="input" />
             <span>Fecha: </span>
         </label>
-        <div *ngIf="comprasForm.get('fecha')?.hasError('pattern')" class="error-message">
+        <div *ngIf="ventasForm.get('fecha')?.hasError('pattern')" class="error-message">
             Por favor, ingresa una fecha válida.
         </div>
 
@@ -24,18 +24,18 @@
             <input type="text" id="id_empleado" formControlName="id_empleado" class="input" />
             <span>ID Empleado: </span>
         </label>
-        <div *ngIf="comprasForm.get('id_empleado')?.hasError('pattern')" class="error-message">
+        <div *ngIf="ventasForm.get('id_empleado')?.hasError('pattern')" class="error-message">
             Solo se permiten números.
         </div>
 
         <label for="id_proveedor">
-            <input type="text" id="id_proveedor" formControlName="id_proveedor" class="input" />
-            <span>ID Proveedor: </span>
+            <input type="text" id="id_cliente" formControlName="id_cliente" class="input" />
+            <span>ID Cliente: </span>
         </label>
-        <div *ngIf="comprasForm.get('id_proveedor')?.hasError('pattern')" class="error-message">
+        <div *ngIf="ventasForm.get('id_cliente')?.hasError('pattern')" class="error-message">
             Solo se permiten números.
         </div>
 
-        <button type="submit" [disabled]="!comprasForm.valid" class="submit">Agregar</button>
+        <button type="submit" [disabled]="!ventasForm.valid" class="submit">Agregar</button>
     </form>
 </body>

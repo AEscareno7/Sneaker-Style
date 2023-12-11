@@ -21,6 +21,7 @@ import { ComprasComponent } from './compras/compras.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { VentasComponent } from './ventas/ventas.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 
     MostrarProductosComponent,
       ProductListComponent,
-      ComprasComponent
+      ComprasComponent,
+      VentasComponent
   ],
   imports: [
     BrowserModule,
